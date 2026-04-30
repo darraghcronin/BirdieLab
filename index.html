@@ -50,6 +50,255 @@
     line-height: 1.6;
   }
 
+  /* ══════════════════════════════════════════════
+     AUTH OVERLAY
+  ══════════════════════════════════════════════ */
+  #auth-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: linear-gradient(135deg, var(--green-900) 0%, #0a2010 60%, #1a3d26 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #auth-overlay.hidden { display: none; }
+
+  .auth-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 44px 48px;
+    width: 420px;
+    max-width: 94vw;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+  }
+
+  .auth-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+    justify-content: center;
+  }
+
+  .auth-logo-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--gold-500);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .auth-logo-text {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.5px;
+  }
+
+  .auth-tagline {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green-300);
+    margin-bottom: 34px;
+  }
+
+  .auth-step { display: none; }
+  .auth-step.active { display: block; }
+
+  .auth-heading {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .auth-sub {
+    font-size: 13px;
+    color: var(--green-300);
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .auth-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.07);
+    color: white;
+    font-family: var(--font-body);
+    font-size: 15px;
+    margin-bottom: 14px;
+    transition: border-color 0.15s, background 0.15s;
+    outline: none;
+  }
+
+  .auth-input::placeholder { color: rgba(255,255,255,0.3); }
+
+  .auth-input:focus {
+    border-color: var(--gold-400);
+    background: rgba(255,255,255,0.1);
+  }
+
+  .auth-btn {
+    width: 100%;
+    padding: 13px;
+    background: var(--gold-500);
+    color: var(--green-900);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    margin-bottom: 12px;
+  }
+
+  .auth-btn:hover { background: var(--gold-400); transform: translateY(-1px); }
+  .auth-btn:active { transform: translateY(0); }
+
+  .auth-link-btn {
+    background: none;
+    border: none;
+    color: var(--green-300);
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: var(--font-body);
+    display: block;
+    margin: 0 auto;
+  }
+
+  .auth-link-btn:hover { color: white; }
+
+  .auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0;
+  }
+
+  .auth-divider span {
+    height: 1px;
+    flex: 1;
+    background: rgba(255,255,255,0.1);
+    display: block;
+  }
+
+  .auth-divider p {
+    font-size: 12px;
+    color: var(--green-400);
+  }
+
+  /* OTP boxes */
+  .otp-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .otp-box {
+    width: 50px;
+    height: 58px;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.07);
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: var(--font-display);
+    text-align: center;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .otp-box:focus {
+    border-color: var(--gold-400);
+    background: rgba(255,255,255,0.12);
+  }
+
+  .auth-email-display {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 9px 14px;
+    font-size: 14px;
+    color: var(--gold-300);
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: var(--font-mono);
+  }
+
+  .auth-error {
+    background: rgba(224,90,90,0.15);
+    border: 1px solid rgba(224,90,90,0.3);
+    border-radius: 8px;
+    padding: 9px 13px;
+    color: #f5a0a0;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 14px;
+    display: none;
+  }
+
+  .auth-success-icon {
+    font-size: 52px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  /* Remembered user banner */
+  .auth-remembered {
+    background: rgba(90,185,123,0.12);
+    border: 1px solid rgba(90,185,123,0.25);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .auth-remembered-avatar {
+    width: 36px;
+    height: 36px;
+    background: var(--gold-500);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .auth-remembered-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .auth-remembered-email {
+    font-size: 12px;
+    color: var(--green-300);
+  }
+
   /* ── SIDEBAR ─────────────────────────────── */
   .sidebar {
     position: fixed;
@@ -156,6 +405,56 @@
     padding: 16px 12px;
     border-top: 1px solid rgba(255,255,255,0.06);
   }
+
+  /* User info in sidebar footer */
+  .sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .sidebar-user:hover { background: rgba(255,255,255,0.06); }
+
+  .sidebar-user-avatar {
+    width: 30px;
+    height: 30px;
+    background: var(--gold-500);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .sidebar-user-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--green-200);
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sidebar-signout {
+    background: none;
+    border: none;
+    font-size: 11px;
+    color: var(--green-400);
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: var(--font-body);
+    padding: 0 12px 8px;
+    display: block;
+  }
+
+  .sidebar-signout:hover { color: var(--green-200); }
 
   .handicap-badge {
     background: rgba(201,168,76,0.15);
@@ -886,9 +1185,6 @@
     margin-left: 8px;
   }
 
-  /* ── TOOLTIPS ────────────────────────────── */
-  [data-tip] { position: relative; }
-
   /* ── DIVIDER ─────────────────────────────── */
   .section-divider {
     height: 1px;
@@ -1003,30 +1299,69 @@
 </head>
 <body>
 
-<!-- AUTH SCREEN -->
-<div id="auth-screen" style="display: none; position: fixed; inset: 0; background: var(--green-900); z-index: 999; align-items: center; justify-content: center; color: white;">
-  <div style="background: white; color: var(--green-900); border-radius: var(--radius); padding: 40px 36px; width: 380px; text-align: center; box-shadow: var(--shadow-md);">
-    <div style="font-size: 48px; margin-bottom: 16px;">⛳</div>
-    <h1 style="font-family: var(--font-display); font-size: 28px; margin-bottom: 8px;">Welcome to BirdieLab</h1>
-    <p style="color: var(--text-secondary); margin-bottom: 28px;">Track your golf game with intelligence</p>
-    
-    <div class="form-group" style="margin-bottom: 20px;">
-      <label class="form-label" style="text-align: left; display: block; margin-bottom: 8px;">Email Address</label>
-      <input type="email" id="email-input" class="form-input" placeholder="you@example.com" 
-             style="font-size: 16px; padding: 14px;">
+<!-- ═══════════════════════════════════════════════
+     AUTH OVERLAY
+══════════════════════════════════════════════════ -->
+<div id="auth-overlay">
+  <div class="auth-box">
+    <div class="auth-logo">
+      <div class="auth-logo-icon">⛳</div>
+      <span class="auth-logo-text">BirdieLab</span>
+    </div>
+    <div class="auth-tagline">Golf Performance Intelligence</div>
+
+    <!-- Step 1: Email entry (or returning user) -->
+    <div class="auth-step active" id="auth-step-1">
+      <div id="auth-remembered-block" style="display:none">
+        <div class="auth-remembered" id="auth-remembered-card">
+          <div class="auth-remembered-avatar">⛳</div>
+          <div>
+            <div class="auth-remembered-name" id="auth-remembered-name">Golfer</div>
+            <div class="auth-remembered-email" id="auth-remembered-email"></div>
+          </div>
+        </div>
+        <button class="auth-btn" onclick="continueAsRemembered()">Continue as <span id="auth-continue-name">Golfer</span> →</button>
+        <div class="auth-divider"><span></span><p>or sign in with a different account</p><span></span></div>
+      </div>
+
+      <div class="auth-heading">Welcome back</div>
+      <div class="auth-sub">Enter your email to sign in or create your free account.</div>
+      <div class="auth-error" id="err-step-1"></div>
+      <input class="auth-input" type="email" id="auth-email-input" placeholder="you@example.com" autocomplete="email">
+      <button class="auth-btn" onclick="submitEmail()">Continue →</button>
     </div>
 
-    <button onclick="verifyEmail()" 
-            class="btn btn-primary" 
-            style="width: 100%; padding: 14px; font-size: 16px;">
-      Continue with Email
-    </button>
+    <!-- Step 2: Name (new user only) -->
+    <div class="auth-step" id="auth-step-name">
+      <div class="auth-heading">Create your account</div>
+      <div class="auth-sub">Just one more thing — what should we call you?</div>
+      <div class="auth-error" id="err-step-name"></div>
+      <input class="auth-input" type="text" id="auth-name-input" placeholder="Your first name" autocomplete="given-name">
+      <button class="auth-btn" onclick="submitName()">Send verification code →</button>
+      <button class="auth-link-btn" onclick="goToStep('auth-step-1')">← Back</button>
+    </div>
 
-    <p style="margin-top: 24px; font-size: 12px; color: var(--text-muted);">
-      We'll send a magic link (simulated for demo)
-    </p>
+    <!-- Step 3: OTP verification -->
+    <div class="auth-step" id="auth-step-otp">
+      <div class="auth-heading">Check your email</div>
+      <div class="auth-sub">We sent a 6-digit code to:</div>
+      <div class="auth-email-display" id="otp-email-display"></div>
+      <div class="auth-error" id="err-step-otp"></div>
+      <div class="otp-row" id="otp-boxes"></div>
+      <button class="auth-btn" onclick="submitOTP()">Verify & Sign In →</button>
+      <button class="auth-link-btn" onclick="resendCode()">Resend code</button>
+    </div>
+
+    <!-- Step 4: Success -->
+    <div class="auth-step" id="auth-step-success">
+      <div class="auth-success-icon">🎉</div>
+      <div class="auth-heading">You're in!</div>
+      <div class="auth-sub" id="auth-success-msg">Welcome to BirdieLab. Your account is ready.</div>
+      <button class="auth-btn" onclick="enterApp()">Open BirdieLab →</button>
+    </div>
   </div>
 </div>
+
 
 <!-- SIDEBAR -->
 <nav class="sidebar">
@@ -1069,9 +1404,14 @@
   </div>
 
   <div class="sidebar-footer">
+    <div class="sidebar-user" id="sidebar-user-row">
+      <div class="sidebar-user-avatar" id="sidebar-avatar">⛳</div>
+      <div class="sidebar-user-name" id="sidebar-user-name">—</div>
+    </div>
+    <button class="sidebar-signout" onclick="signOut()">Sign out</button>
     <div class="handicap-badge">
       <div class="handicap-label">Handicap Index</div>
-      <div class="handicap-value" id="sidebar-hcp">8.4</div>
+      <div class="handicap-value" id="sidebar-hcp">—</div>
     </div>
   </div>
 </nav>
@@ -1096,51 +1436,43 @@
       <div class="stat-grid">
         <div class="stat-card">
           <div class="stat-label">Scoring Average</div>
-          <div class="stat-value" id="d-scoring-avg">78.3</div>
+          <div class="stat-value" id="d-scoring-avg">—</div>
           <div class="stat-sub">last 10 rounds</div>
-          <div class="stat-trend trend-down">▼ 1.2 from prior 10</div>
         </div>
         <div class="stat-card gold">
           <div class="stat-label">Fairways Hit %</div>
-          <div class="stat-value" id="d-fir">54%</div>
+          <div class="stat-value" id="d-fir">—</div>
           <div class="stat-sub">season avg</div>
-          <div class="stat-trend trend-up">▲ 6% this month</div>
         </div>
         <div class="stat-card">
           <div class="stat-label">GIR %</div>
-          <div class="stat-value" id="d-gir">47%</div>
+          <div class="stat-value" id="d-gir">—</div>
           <div class="stat-sub">season avg</div>
-          <div class="stat-trend trend-up">▲ 3% this month</div>
         </div>
         <div class="stat-card blue">
           <div class="stat-label">Putts / Round</div>
-          <div class="stat-value" id="d-putts">31.2</div>
+          <div class="stat-value" id="d-putts">—</div>
           <div class="stat-sub">season avg</div>
-          <div class="stat-trend trend-up">▲ Improved 0.8</div>
         </div>
         <div class="stat-card red">
           <div class="stat-label">Penalties / Round</div>
-          <div class="stat-value" id="d-penalties">1.4</div>
+          <div class="stat-value" id="d-penalties">—</div>
           <div class="stat-sub">season avg</div>
-          <div class="stat-trend trend-down">▼ Still above goal</div>
         </div>
         <div class="stat-card gold">
           <div class="stat-label">Up & Down %</div>
-          <div class="stat-value" id="d-updown">38%</div>
+          <div class="stat-value" id="d-updown">—</div>
           <div class="stat-sub">season avg</div>
-          <div class="stat-trend trend-down">▼ Needs work</div>
         </div>
         <div class="stat-card">
           <div class="stat-label">Sand Saves %</div>
-          <div class="stat-value" id="d-sand">29%</div>
+          <div class="stat-value" id="d-sand">—</div>
           <div class="stat-sub">season avg</div>
-          <div class="stat-trend trend-up">▲ 4% improvement</div>
         </div>
         <div class="stat-card">
           <div class="stat-label">Scrambling %</div>
-          <div class="stat-value" id="d-scramble">41%</div>
+          <div class="stat-value" id="d-scramble">—</div>
           <div class="stat-sub">when missing GIR</div>
-          <div class="stat-trend trend-up">▲ 5% this month</div>
         </div>
       </div>
 
@@ -1151,8 +1483,13 @@
             <span class="badge badge-green">Last 12 rounds</span>
           </div>
           <div class="card-body">
-            <div class="chart-wrap">
-              <canvas id="scoringChart" role="img" aria-label="Scoring trend chart over last 12 rounds">Scoring trend line chart.</canvas>
+            <div id="scoring-chart-empty" class="empty-state" style="padding:30px 20px">
+              <div class="empty-icon">📈</div>
+              <div class="empty-title">No rounds yet</div>
+              <p style="font-size:13px">Play and save rounds to see your scoring trend.</p>
+            </div>
+            <div class="chart-wrap" id="scoring-chart-wrap" style="display:none">
+              <canvas id="scoringChart"></canvas>
             </div>
           </div>
         </div>
@@ -1163,8 +1500,13 @@
             <span class="badge badge-gold">Category Breakdown</span>
           </div>
           <div class="card-body">
-            <div class="chart-wrap">
-              <canvas id="sgChart" role="img" aria-label="Strokes gained by category">Strokes gained breakdown bar chart.</canvas>
+            <div id="sg-chart-empty" class="empty-state" style="padding:30px 20px">
+              <div class="empty-icon">🏌️</div>
+              <div class="empty-title">No data yet</div>
+              <p style="font-size:13px">Complete rounds to see your strokes gained breakdown.</p>
+            </div>
+            <div class="chart-wrap" id="sg-chart-wrap" style="display:none">
+              <canvas id="sgChart"></canvas>
             </div>
           </div>
         </div>
@@ -1177,15 +1519,16 @@
             <span class="badge badge-green">All rounds</span>
           </div>
           <div class="card-body">
-            <div class="chart-wrap" style="height:200px">
-              <canvas id="scoreDistChart" role="img" aria-label="Score distribution: eagles, birdies, pars, bogeys, doubles">Score distribution donut chart.</canvas>
+            <div id="dist-chart-empty" class="empty-state" style="padding:30px 20px">
+              <div class="empty-icon">🕳️</div>
+              <div class="empty-title">No rounds yet</div>
+              <p style="font-size:13px">Your score distribution will appear here after you log rounds.</p>
             </div>
-            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;font-size:12px;">
-              <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:#2d7a45;display:inline-block"></span>Birdies 12%</span>
-              <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:#5a8ee0;display:inline-block"></span>Pars 46%</span>
-              <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:#e0a030;display:inline-block"></span>Bogeys 30%</span>
-              <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:#e05a5a;display:inline-block"></span>Doubles 9%</span>
-              <span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:#c050a0;display:inline-block"></span>Eagles 1% / Worse 2%</span>
+            <div id="dist-chart-wrap" style="display:none">
+              <div class="chart-wrap" style="height:200px">
+                <canvas id="scoreDistChart"></canvas>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;font-size:12px;" id="dist-legend"></div>
             </div>
           </div>
         </div>
@@ -1194,42 +1537,11 @@
           <div class="card-header">
             <div class="card-title">GIR by Par Type</div>
           </div>
-          <div class="card-body">
-            <div class="metric-row">
-              <div class="metric-name">Par 3 GIR</div>
-              <div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:62%;background:#2d7a45"></div></div>
-              <div class="metric-val">62%</div>
-              <div class="metric-benchmark">Tour: 68%</div>
-            </div>
-            <div class="metric-row">
-              <div class="metric-name">Par 4 GIR</div>
-              <div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:41%;background:#2d7a45"></div></div>
-              <div class="metric-val">41%</div>
-              <div class="metric-benchmark">Tour: 65%</div>
-            </div>
-            <div class="metric-row">
-              <div class="metric-name">Par 5 GIR</div>
-              <div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:55%;background:#2d7a45"></div></div>
-              <div class="metric-val">55%</div>
-              <div class="metric-benchmark">Tour: 80%</div>
-            </div>
-            <div class="metric-row">
-              <div class="metric-name">Fairways Hit (Par 4/5)</div>
-              <div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:54%;background:#c9a84c"></div></div>
-              <div class="metric-val">54%</div>
-              <div class="metric-benchmark">Tour: 60%</div>
-            </div>
-            <div class="metric-row">
-              <div class="metric-name">1-Putt %</div>
-              <div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:28%;background:#5a8ee0"></div></div>
-              <div class="metric-val">28%</div>
-              <div class="metric-benchmark">Tour: 38%</div>
-            </div>
-            <div class="metric-row">
-              <div class="metric-name">3-Putt Avoidance</div>
-              <div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:88%;background:#5ab97b"></div></div>
-              <div class="metric-val">88%</div>
-              <div class="metric-benchmark">Tour: 97%</div>
+          <div class="card-body" id="gir-by-par-body">
+            <div class="empty-state" style="padding:30px 20px">
+              <div class="empty-icon">🎯</div>
+              <div class="empty-title">No data yet</div>
+              <p style="font-size:13px">Log rounds to see GIR broken down by par.</p>
             </div>
           </div>
         </div>
@@ -1241,8 +1553,13 @@
           <span class="badge badge-green">Make % by distance bracket</span>
         </div>
         <div class="card-body">
-          <div class="chart-wrap" style="height:200px">
-            <canvas id="puttingChart" role="img" aria-label="Putting make percentage by distance">Putting percentage by distance bar chart.</canvas>
+          <div id="putting-chart-empty" class="empty-state" style="padding:30px 20px">
+            <div class="empty-icon">⛳</div>
+            <div class="empty-title">No putting data yet</div>
+            <p style="font-size:13px">Log rounds with putt details to see your putting analysis.</p>
+          </div>
+          <div class="chart-wrap" id="putting-chart-wrap" style="display:none;height:200px">
+            <canvas id="puttingChart"></canvas>
           </div>
         </div>
       </div>
@@ -1312,12 +1629,12 @@
         <div>
           <div class="ai-rec" style="margin-bottom:16px">
             <div class="ai-rec-label">Pre-Round Focus</div>
-            <div class="ai-rec-title">Today: Attack Par 5s</div>
-            <div class="ai-rec-body">Based on your recent rounds, your Par 5 GIR has improved to 55%. Focus on aggressive second shots when within 220 yards. Your putting inside 6 feet is strong at 89% — trust it.</div>
+            <div class="ai-rec-title">Ready to play?</div>
+            <div class="ai-rec-body">Log a few rounds and BirdieLab will start generating personalized pre-round focus areas based on your stats and trends.</div>
             <div class="ai-drills">
-              <span class="drill-tag">🎯 Commit to targets</span>
-              <span class="drill-tag">🏌️ Shape driver right→left</span>
-              <span class="drill-tag">📍 Lag from 30ft+</span>
+              <span class="drill-tag">🎯 Track every hole</span>
+              <span class="drill-tag">📍 Log putts & GIR</span>
+              <span class="drill-tag">🏌️ Note shot shapes</span>
             </div>
           </div>
 
@@ -1325,25 +1642,10 @@
             <div class="card-header"><div class="card-title">Quick Stats — Last Round</div></div>
             <div class="card-body">
               <div id="last-round-stats">
-                <div class="metric-row">
-                  <div class="metric-name">Score</div>
-                  <div class="metric-val" style="margin-left:auto">78 (+6)</div>
-                </div>
-                <div class="metric-row">
-                  <div class="metric-name">GIR</div>
-                  <div class="metric-val" style="margin-left:auto">8/18</div>
-                </div>
-                <div class="metric-row">
-                  <div class="metric-name">Fairways Hit</div>
-                  <div class="metric-val" style="margin-left:auto">7/14</div>
-                </div>
-                <div class="metric-row">
-                  <div class="metric-name">Total Putts</div>
-                  <div class="metric-val" style="margin-left:auto">31</div>
-                </div>
-                <div class="metric-row">
-                  <div class="metric-name">Penalties</div>
-                  <div class="metric-val" style="margin-left:auto">2</div>
+                <div class="empty-state" style="padding:24px 10px">
+                  <div class="empty-icon" style="font-size:28px">📋</div>
+                  <div class="empty-title" style="font-size:15px">No rounds yet</div>
+                  <p style="font-size:12px">Your last round stats will appear here.</p>
                 </div>
               </div>
             </div>
@@ -1361,17 +1663,14 @@
           </div>
         </div>
         <div class="card-body" style="padding:16px">
-          <!-- Front 9 -->
           <div style="margin-bottom:12px">
             <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:8px">Front 9</div>
             <div class="hole-grid" id="front9-holes"></div>
           </div>
-          <!-- Back 9 -->
           <div>
             <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:8px">Back 9</div>
             <div class="hole-grid" id="back9-holes"></div>
           </div>
-          <!-- Totals row -->
           <div style="margin-top:14px;display:flex;gap:20px;padding-top:14px;border-top:2px solid var(--border)">
             <div style="text-align:center">
               <div style="font-size:11px;color:var(--text-muted)">Out</div>
@@ -1414,10 +1713,7 @@
         </div>
         <button class="btn btn-primary" onclick="openCourseModal()">+ Add New Course</button>
       </div>
-
-      <div id="courses-list">
-        <!-- populated by JS -->
-      </div>
+      <div id="courses-list"></div>
     </div><!-- /courses -->
 
 
@@ -1447,7 +1743,6 @@
       </div>
 
       <div id="practice-plan" style="display:none">
-        <!-- AI Practice Plan -->
         <div class="ai-rec" id="practice-ai-rec">
           <div class="ai-rec-label">BirdieLab Intelligence</div>
           <div class="ai-rec-title" id="practice-title">Loading plan…</div>
@@ -1469,13 +1764,12 @@
             <div class="card-body">
               <div id="why-section" style="font-size:13px;color:var(--text-secondary);line-height:1.8"></div>
               <div class="section-divider"></div>
-              <div style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:10px">Your Weak Spots Driving This Plan</div>
+              <div style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:10px">Focus Areas</div>
               <div id="weakness-bars"></div>
             </div>
           </div>
         </div>
 
-        <!-- Practice Session Log -->
         <div class="card">
           <div class="card-header"><div class="card-title">Log This Session</div></div>
           <div class="card-body">
@@ -1531,25 +1825,33 @@
       </div>
 
       <div class="card" style="margin-bottom:20px">
-        <div class="card-body" style="padding:10px 0" id="history-list">
-          <!-- JS rendered -->
-        </div>
+        <div class="card-body" style="padding:10px 0" id="history-list"></div>
       </div>
 
       <div class="two-col">
         <div class="card">
           <div class="card-header"><div class="card-title">Score by Course</div></div>
           <div class="card-body">
-            <div class="chart-wrap" style="height:220px">
-              <canvas id="courseChart" role="img" aria-label="Average score by course">Scores by course.</canvas>
+            <div id="course-chart-empty" class="empty-state" style="padding:30px 20px">
+              <div class="empty-icon">🗺️</div>
+              <div class="empty-title">No data yet</div>
+              <p style="font-size:13px">Log rounds at different courses to see this chart.</p>
+            </div>
+            <div class="chart-wrap" id="course-chart-wrap" style="display:none;height:220px">
+              <canvas id="courseChart"></canvas>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="card-header"><div class="card-title">Monthly Scoring Average</div></div>
           <div class="card-body">
-            <div class="chart-wrap" style="height:220px">
-              <canvas id="monthlyChart" role="img" aria-label="Monthly scoring average">Monthly average score line chart.</canvas>
+            <div id="monthly-chart-empty" class="empty-state" style="padding:30px 20px">
+              <div class="empty-icon">📅</div>
+              <div class="empty-title">No data yet</div>
+              <p style="font-size:13px">Your monthly trend will appear after logging rounds.</p>
+            </div>
+            <div class="chart-wrap" id="monthly-chart-wrap" style="display:none;height:220px">
+              <canvas id="monthlyChart"></canvas>
             </div>
           </div>
         </div>
@@ -1574,26 +1876,30 @@
       <!-- Driving tab -->
       <div class="tab-content active" id="tab-driving">
         <div class="stat-grid">
-          <div class="stat-card gold"><div class="stat-label">Fairways Hit</div><div class="stat-value">54%</div><div class="stat-sub">7.6 / 14 holes avg</div></div>
-          <div class="stat-card"><div class="stat-label">Avg Drive Distance</div><div class="stat-value">267y</div><div class="stat-sub">estimated</div></div>
-          <div class="stat-card"><div class="stat-label">Left Miss %</div><div class="stat-value">22%</div><div class="stat-sub">of missed fairways</div></div>
-          <div class="stat-card red"><div class="stat-label">OB / Lost Ball</div><div class="stat-value">0.8</div><div class="stat-sub">per round avg</div></div>
+          <div class="stat-card gold"><div class="stat-label">Fairways Hit</div><div class="stat-value" id="s-fir">—</div><div class="stat-sub">avg per round</div></div>
+          <div class="stat-card"><div class="stat-label">Avg Drive Distance</div><div class="stat-value">—</div><div class="stat-sub">log rounds to track</div></div>
+          <div class="stat-card"><div class="stat-label">Left Miss %</div><div class="stat-value">—</div><div class="stat-sub">of missed fairways</div></div>
+          <div class="stat-card red"><div class="stat-label">OB / Lost Ball</div><div class="stat-value" id="s-ob">—</div><div class="stat-sub">per round avg</div></div>
         </div>
         <div class="two-col">
           <div class="card">
             <div class="card-header"><div class="card-title">Fairway Hit % Trend</div></div>
             <div class="card-body">
-              <div class="chart-wrap"><canvas id="firTrendChart" role="img" aria-label="Fairway hit percentage trend">FIR trend.</canvas></div>
+              <div class="empty-state" style="padding:30px 20px">
+                <div class="empty-icon">📊</div>
+                <div class="empty-title">No data yet</div>
+                <p style="font-size:13px">Log rounds to see your FIR trend over time.</p>
+              </div>
             </div>
           </div>
           <div class="card">
             <div class="card-header"><div class="card-title">Scoring After Miss</div></div>
             <div class="card-body">
-              <div class="metric-row"><div class="metric-name">Avg score — FIR</div><div class="metric-val" style="margin-left:auto">4.01</div></div>
-              <div class="metric-row"><div class="metric-name">Avg score — Miss left</div><div class="metric-val" style="margin-left:auto">4.42</div></div>
-              <div class="metric-row"><div class="metric-name">Avg score — Miss right</div><div class="metric-val" style="margin-left:auto">4.67</div></div>
-              <div class="metric-row"><div class="metric-name">Avg score — OB/Water</div><div class="metric-val" style="margin-left:auto">5.80</div></div>
-              <p style="font-size:12px;color:var(--text-muted);margin-top:12px">🔑 Missing right costs you significantly more than missing left — consider playing a fade to keep right misses in play.</p>
+              <div class="empty-state" style="padding:30px 20px">
+                <div class="empty-icon">🏌️</div>
+                <div class="empty-title">No data yet</div>
+                <p style="font-size:13px">Log more rounds to analyze how misses affect scoring.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -1602,16 +1908,18 @@
       <!-- Approach tab -->
       <div class="tab-content" id="tab-approach">
         <div class="stat-grid">
-          <div class="stat-card"><div class="stat-label">GIR %</div><div class="stat-value">47%</div><div class="stat-sub">8.5 / 18 holes avg</div></div>
-          <div class="stat-card gold"><div class="stat-label">Proximity (100-150y)</div><div class="stat-value">22ft</div><div class="stat-sub">avg distance to pin</div></div>
-          <div class="stat-card"><div class="stat-label">Proximity (150-200y)</div><div class="stat-value">38ft</div><div class="stat-sub">avg distance to pin</div></div>
-          <div class="stat-card red"><div class="stat-label">Long Miss %</div><div class="stat-value">41%</div><div class="stat-sub">behind the pin</div></div>
+          <div class="stat-card"><div class="stat-label">GIR %</div><div class="stat-value" id="s-gir">—</div><div class="stat-sub">avg per round</div></div>
+          <div class="stat-card gold"><div class="stat-label">Proximity (100-150y)</div><div class="stat-value">—</div><div class="stat-sub">avg distance to pin</div></div>
+          <div class="stat-card"><div class="stat-label">Proximity (150-200y)</div><div class="stat-value">—</div><div class="stat-sub">avg distance to pin</div></div>
+          <div class="stat-card red"><div class="stat-label">Long Miss %</div><div class="stat-value">—</div><div class="stat-sub">behind the pin</div></div>
         </div>
         <div class="card">
           <div class="card-header"><div class="card-title">Proximity to Pin by Distance</div></div>
           <div class="card-body">
-            <div class="chart-wrap" style="height:260px">
-              <canvas id="proximityChart" role="img" aria-label="Proximity to pin by approach distance">Proximity bar chart.</canvas>
+            <div class="empty-state" style="padding:40px 20px">
+              <div class="empty-icon">🎯</div>
+              <div class="empty-title">No approach data yet</div>
+              <p style="font-size:13px">Log rounds with GIR details to see proximity analysis.</p>
             </div>
           </div>
         </div>
@@ -1620,29 +1928,29 @@
       <!-- Short Game tab -->
       <div class="tab-content" id="tab-short">
         <div class="stat-grid">
-          <div class="stat-card red"><div class="stat-label">Up & Down %</div><div class="stat-value">38%</div><div class="stat-sub">all lies</div></div>
-          <div class="stat-card"><div class="stat-label">Scrambling %</div><div class="stat-value">41%</div><div class="stat-sub">from rough/fringe</div></div>
-          <div class="stat-card gold"><div class="stat-label">Sand Save %</div><div class="stat-value">29%</div><div class="stat-sub">from bunkers</div></div>
-          <div class="stat-card"><div class="stat-label">Avg Chip Dist</div><div class="stat-value">8.2ft</div><div class="stat-sub">to hole after chip</div></div>
+          <div class="stat-card red"><div class="stat-label">Up & Down %</div><div class="stat-value" id="s-updown">—</div><div class="stat-sub">all lies</div></div>
+          <div class="stat-card"><div class="stat-label">Scrambling %</div><div class="stat-value" id="s-scramble">—</div><div class="stat-sub">from rough/fringe</div></div>
+          <div class="stat-card gold"><div class="stat-label">Sand Save %</div><div class="stat-value" id="s-sand">—</div><div class="stat-sub">from bunkers</div></div>
+          <div class="stat-card"><div class="stat-label">Avg Chip Dist</div><div class="stat-value">—</div><div class="stat-sub">to hole after chip</div></div>
         </div>
         <div class="two-col">
           <div class="card">
             <div class="card-header"><div class="card-title">Up & Down by Lie</div></div>
             <div class="card-body">
-              <div class="metric-row"><div class="metric-name">Fairway Fringe</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:58%;background:#2d7a45"></div></div><div class="metric-val">58%</div></div>
-              <div class="metric-row"><div class="metric-name">Light Rough</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:44%;background:#5ab97b"></div></div><div class="metric-val">44%</div></div>
-              <div class="metric-row"><div class="metric-name">Deep Rough</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:22%;background:#e0a030"></div></div><div class="metric-val">22%</div></div>
-              <div class="metric-row"><div class="metric-name">Bunker</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:29%;background:#e05a5a"></div></div><div class="metric-val">29%</div></div>
-              <div class="metric-row"><div class="metric-name">Tight/Hardpan</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:35%;background:#e05a5a"></div></div><div class="metric-val">35%</div></div>
+              <div class="empty-state" style="padding:30px 20px">
+                <div class="empty-icon">🌿</div>
+                <div class="empty-title">No data yet</div>
+                <p style="font-size:13px">Log up & down results to see breakdown by lie type.</p>
+              </div>
             </div>
           </div>
           <div class="card">
             <div class="card-header"><div class="card-title">Short Game Insight</div></div>
             <div class="card-body">
-              <div class="ai-rec" style="background:var(--green-900)">
-                <div class="ai-rec-label">Analysis</div>
-                <div class="ai-rec-title" style="font-size:16px">Bunker play is the biggest leakage</div>
-                <div class="ai-rec-body">Your sand save rate of 29% is the weakest area of your short game. Tour average for a scratch player is ~55%. Improving this to just 40% would save ~1.5 shots per round on average.</div>
+              <div class="empty-state" style="padding:30px 20px">
+                <div class="empty-icon">💡</div>
+                <div class="empty-title">Insights coming soon</div>
+                <p style="font-size:13px">BirdieLab will analyze your short game after you log a few rounds.</p>
               </div>
             </div>
           </div>
@@ -1652,30 +1960,30 @@
       <!-- Putting tab -->
       <div class="tab-content" id="tab-putting">
         <div class="stat-grid">
-          <div class="stat-card"><div class="stat-label">Putts / Round</div><div class="stat-value">31.2</div><div class="stat-sub">season avg</div></div>
-          <div class="stat-card gold"><div class="stat-label">1-Putt %</div><div class="stat-value">28%</div></div>
-          <div class="stat-card red"><div class="stat-label">3-Putt %</div><div class="stat-value">12%</div></div>
-          <div class="stat-card"><div class="stat-label">Putts / GIR</div><div class="stat-value">1.82</div><div class="stat-sub">avg when on in reg</div></div>
+          <div class="stat-card"><div class="stat-label">Putts / Round</div><div class="stat-value" id="s-putts">—</div><div class="stat-sub">season avg</div></div>
+          <div class="stat-card gold"><div class="stat-label">1-Putt %</div><div class="stat-value">—</div></div>
+          <div class="stat-card red"><div class="stat-label">3-Putt %</div><div class="stat-value">—</div></div>
+          <div class="stat-card"><div class="stat-label">Putts / GIR</div><div class="stat-value">—</div><div class="stat-sub">avg when on in reg</div></div>
         </div>
         <div class="two-col">
           <div class="card">
             <div class="card-header"><div class="card-title">Make % by Distance</div></div>
             <div class="card-body">
-              <div class="chart-wrap" style="height:240px">
-                <canvas id="puttDistChart" role="img" aria-label="Putt make percentage by distance">Putting make rate chart.</canvas>
+              <div class="empty-state" style="padding:30px 20px">
+                <div class="empty-icon">⛳</div>
+                <div class="empty-title">No putting data yet</div>
+                <p style="font-size:13px">Log rounds with putt counts to see your make % by distance.</p>
               </div>
             </div>
           </div>
           <div class="card">
             <div class="card-header"><div class="card-title">Putting Breakdown</div></div>
             <div class="card-body">
-              <div class="metric-row"><div class="metric-name">Inside 3 feet</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:94%;background:#2d7a45"></div></div><div class="metric-val">94%</div></div>
-              <div class="metric-row"><div class="metric-name">3–6 feet</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:71%;background:#5ab97b"></div></div><div class="metric-val">71%</div></div>
-              <div class="metric-row"><div class="metric-name">6–10 feet</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:42%;background:#e0a030"></div></div><div class="metric-val">42%</div></div>
-              <div class="metric-row"><div class="metric-name">10–15 feet</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:28%;background:#e05a5a"></div></div><div class="metric-val">28%</div></div>
-              <div class="metric-row"><div class="metric-name">15–25 feet</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:16%;background:#e05a5a"></div></div><div class="metric-val">16%</div></div>
-              <div class="metric-row"><div class="metric-name">25+ feet (2-putt)</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:84%;background:#2d7a45"></div></div><div class="metric-val">84%</div></div>
-              <p style="font-size:12px;color:var(--text-muted);margin-top:12px">🔑 Your 6–10ft make rate is the biggest opportunity. Getting this from 42% → 55% would save ~0.8 putts/round.</p>
+              <div class="empty-state" style="padding:30px 20px">
+                <div class="empty-icon">📏</div>
+                <div class="empty-title">No data yet</div>
+                <p style="font-size:13px">Your putting distance breakdown will appear here.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -1684,29 +1992,31 @@
       <!-- Scoring Patterns tab -->
       <div class="tab-content" id="tab-mental">
         <div class="stat-grid">
-          <div class="stat-card gold"><div class="stat-label">Best Nine</div><div class="stat-value">Front</div><div class="stat-sub">avg +3.1 vs +4.8 back</div></div>
-          <div class="stat-card red"><div class="stat-label">Worst Hole Type</div><div class="stat-value">Par 4s</div><div class="stat-sub">+0.92 per hole avg</div></div>
-          <div class="stat-card"><div class="stat-label">Double+ per Round</div><div class="stat-value">1.8</div><div class="stat-sub">big number frequency</div></div>
-          <div class="stat-card"><div class="stat-label">Best Condition</div><div class="stat-value">Firm</div><div class="stat-sub">avg 76.8 on firm courses</div></div>
+          <div class="stat-card gold"><div class="stat-label">Best Nine</div><div class="stat-value">—</div><div class="stat-sub">front vs back</div></div>
+          <div class="stat-card red"><div class="stat-label">Worst Hole Type</div><div class="stat-value">—</div><div class="stat-sub">par 3 / 4 / 5</div></div>
+          <div class="stat-card"><div class="stat-label">Double+ per Round</div><div class="stat-value">—</div><div class="stat-sub">big number frequency</div></div>
+          <div class="stat-card"><div class="stat-label">Best Condition</div><div class="stat-value">—</div><div class="stat-sub">weather pattern</div></div>
         </div>
 
         <div class="two-col">
           <div class="card">
             <div class="card-header"><div class="card-title">Score vs. Par by Hole Number</div></div>
             <div class="card-body">
-              <div class="chart-wrap">
-                <canvas id="holeAvgChart" role="img" aria-label="Average score vs par per hole">Hole average scores chart.</canvas>
+              <div class="empty-state" style="padding:40px 20px">
+                <div class="empty-icon">🏌️</div>
+                <div class="empty-title">No data yet</div>
+                <p style="font-size:13px">Log multiple rounds to see per-hole averages.</p>
               </div>
             </div>
           </div>
           <div class="card">
             <div class="card-header"><div class="card-title">Scoring by Weather</div></div>
             <div class="card-body">
-              <div class="metric-row"><div class="metric-name">☀️ Sunny</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:72%;background:#2d7a45"></div></div><div class="metric-val">77.4</div></div>
-              <div class="metric-row"><div class="metric-name">⛅ Partly Cloudy</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:68%;background:#5ab97b"></div></div><div class="metric-val">78.1</div></div>
-              <div class="metric-row"><div class="metric-name">💨 Windy</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:55%;background:#e0a030"></div></div><div class="metric-val">80.6</div></div>
-              <div class="metric-row"><div class="metric-name">🌧️ Rainy</div><div class="metric-bar-wrap"><div class="metric-bar-fill" style="width:50%;background:#e05a5a"></div></div><div class="metric-val">81.3</div></div>
-              <p style="font-size:12px;color:var(--text-muted);margin-top:12px">You struggle most in wind (+4.6 relative to your calm-weather avg). Focus on low trajectory shots and course management in wind.</p>
+              <div class="empty-state" style="padding:40px 20px">
+                <div class="empty-icon">☀️</div>
+                <div class="empty-title">No data yet</div>
+                <p style="font-size:13px">Log rounds with weather conditions to see this breakdown.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -1751,11 +2061,9 @@
       <div class="section-divider"></div>
       <div style="font-size:13px;font-weight:600;color:var(--green-900);margin-bottom:14px">Hole-by-Hole Setup</div>
 
-      <!-- Front 9 -->
       <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:8px">Front 9</div>
       <div class="hole-setup-grid" id="front9-setup"></div>
 
-      <!-- Back 9 -->
       <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:8px;margin-top:12px">Back 9</div>
       <div class="hole-setup-grid" id="back9-setup"></div>
 
@@ -1831,7 +2139,6 @@
         </div>
       </div>
 
-      <!-- Shot type selector -->
       <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);margin-bottom:8px">Tee shot shape (optional)</div>
       <div class="shot-category">
         <div class="shot-btn" onclick="toggleShot(this,'straight')">Straight</div>
@@ -1866,6 +2173,7 @@
 // STATE
 // ═══════════════════════════════════════════════
 let state = {
+  user: null,           // { email, name, initials }
   courses: [],
   rounds: [],
   practiceSessions: [],
@@ -1874,91 +2182,256 @@ let state = {
   editingCourseIndex: null,
 };
 
-// Demo data seed
-function seedDemoData() {
-  state.courses = [
-    {
-      name: "Pine Valley Golf Club",
-      location: "Camden, NJ",
-      rating: 76.2,
-      slope: 155,
-      holes: [
-        {par:4,si:7},{par:4,si:15},{par:3,si:17},{par:4,si:3},{par:3,si:11},
-        {par:4,si:1},{par:5,si:5},{par:4,si:9},{par:4,si:13},
-        {par:4,si:8},{par:4,si:16},{par:4,si:12},{par:4,si:6},{par:4,si:2},
-        {par:5,si:14},{par:3,si:18},{par:5,si:4},{par:4,si:10}
-      ]
-    },
-    {
-      name: "Augusta National",
-      location: "Augusta, GA",
-      rating: 78.1,
-      slope: 148,
-      holes: [
-        {par:4,si:9},{par:5,si:5},{par:4,si:15},{par:3,si:17},{par:4,si:7},
-        {par:3,si:11},{par:4,si:1},{par:5,si:13},{par:4,si:3},
-        {par:4,si:10},{par:4,si:2},{par:3,si:18},{par:5,si:8},{par:4,si:4},
-        {par:5,si:14},{par:3,si:16},{par:4,si:6},{par:4,si:12}
-      ]
-    },
-    {
-      name: "Bethpage Black",
-      location: "Farmingdale, NY",
-      rating: 75.4,
-      slope: 148,
-      holes: [
-        {par:4,si:3},{par:4,si:9},{par:3,si:17},{par:5,si:7},{par:4,si:1},
-        {par:5,si:11},{par:4,si:13},{par:3,si:15},{par:4,si:5},
-        {par:4,si:4},{par:4,si:12},{par:4,si:2},{par:5,si:6},{par:3,si:18},
-        {par:4,si:8},{par:4,si:10},{par:5,si:16},{par:4,si:14}
-      ]
+// ═══════════════════════════════════════════════
+// AUTH FLOW
+// ═══════════════════════════════════════════════
+let authEmail = '';
+let authName = '';
+let generatedOTP = '';
+let isNewUser = false;
+
+// Simulated "known users" store (uses localStorage for persistence)
+function getKnownUsers() {
+  try { return JSON.parse(localStorage.getItem('bl_users') || '{}'); } catch { return {}; }
+}
+
+function saveKnownUser(email, name) {
+  const users = getKnownUsers();
+  users[email.toLowerCase()] = { name, email: email.toLowerCase(), lastSeen: Date.now() };
+  localStorage.setItem('bl_users', JSON.stringify(users));
+}
+
+function getRememberedSession() {
+  try {
+    const s = localStorage.getItem('bl_session');
+    if (!s) return null;
+    const parsed = JSON.parse(s);
+    // Sessions valid for 30 days
+    if (Date.now() - parsed.ts > 30 * 24 * 60 * 60 * 1000) {
+      localStorage.removeItem('bl_session');
+      return null;
     }
-  ];
-
-  state.rounds = [
-    { courseIndex:0, date:'2025-04-20', score:78, tees:'White', weather:'Sunny', holes: generateDemoHoles(state.courses[0].holes, 78) },
-    { courseIndex:1, date:'2025-04-14', score:81, tees:'Blue', weather:'Windy', holes: generateDemoHoles(state.courses[1].holes, 81) },
-    { courseIndex:0, date:'2025-04-07', score:76, tees:'White', weather:'Sunny', holes: generateDemoHoles(state.courses[0].holes, 76) },
-    { courseIndex:2, date:'2025-03-30', score:80, tees:'Blue', weather:'Cloudy', holes: generateDemoHoles(state.courses[2].holes, 80) },
-    { courseIndex:0, date:'2025-03-22', score:79, tees:'White', weather:'Sunny', holes: generateDemoHoles(state.courses[0].holes, 79) },
-    { courseIndex:1, date:'2025-03-15', score:83, tees:'Blue', weather:'Rainy', holes: generateDemoHoles(state.courses[1].holes, 83) },
-    { courseIndex:2, date:'2025-03-08', score:77, tees:'Blue', weather:'Sunny', holes: generateDemoHoles(state.courses[2].holes, 77) },
-    { courseIndex:0, date:'2025-02-22', score:82, tees:'White', weather:'Windy', holes: generateDemoHoles(state.courses[0].holes, 82) },
-  ];
+    return parsed;
+  } catch { return null; }
 }
 
-function generateDemoHoles(holeDefs, targetScore) {
-  const coursePar = holeDefs.reduce((s,h)=>s+h.par,0);
-  const overage = targetScore - coursePar;
-  return holeDefs.map((h, i) => {
-    const base = h.par + (Math.random() < 0.15 ? -1 : (Math.random() < 0.4 ? 0 : (Math.random() < 0.35 ? 1 : 2)));
-    const putts = Math.floor(Math.random() * 2) + 1;
-    return {
-      par: h.par,
-      score: Math.max(1, base),
-      putts,
-      gir: putts <= 2 && Math.random() > 0.4,
-      fir: h.par > 3 ? Math.random() > 0.45 : null,
-      fairway: h.par > 3 ? (Math.random() > 0.45 ? 'yes' : (Math.random() > 0.5 ? 'left' : 'right')) : 'na',
-      penalties: Math.random() < 0.1 ? 1 : 0,
-    };
-  });
+function saveSession(email, name) {
+  localStorage.setItem('bl_session', JSON.stringify({ email, name, ts: Date.now() }));
 }
 
-function getTotalPar(courseIdx) {
-  if (courseIdx < 0 || courseIdx >= state.courses.length) return 72;
-  return state.courses[courseIdx].holes.reduce((s,h)=>s+h.par,0);
+function clearSession() {
+  localStorage.removeItem('bl_session');
 }
 
-function getRoundStats(round) {
-  const holes = round.holes || [];
-  const gir = holes.filter(h=>h.gir).length;
-  const putts = holes.reduce((s,h)=>s+(h.putts||0),0);
-  const firHoles = holes.filter(h=>h.fir !== null);
-  const fir = firHoles.filter(h=>h.fir).length;
-  const par = getTotalPar(round.courseIndex);
-  const rel = round.score - par;
-  return { gir, putts, fir, firTotal: firHoles.length, rel, par };
+function getUserData(email) {
+  try {
+    const key = 'bl_data_' + email.toLowerCase().replace(/[^a-z0-9]/g,'_');
+    return JSON.parse(localStorage.getItem(key) || 'null');
+  } catch { return null; }
+}
+
+function saveUserData(email) {
+  const key = 'bl_data_' + email.toLowerCase().replace(/[^a-z0-9]/g,'_');
+  localStorage.setItem(key, JSON.stringify({ courses: state.courses, rounds: state.rounds }));
+}
+
+function loadUserData(email) {
+  const data = getUserData(email);
+  if (data) {
+    state.courses = data.courses || [];
+    state.rounds = data.rounds || [];
+  } else {
+    state.courses = [];
+    state.rounds = [];
+  }
+}
+
+function generateOTP() {
+  generatedOTP = String(Math.floor(100000 + Math.random() * 900000));
+  return generatedOTP;
+}
+
+function showError(stepId, msg) {
+  const el = document.getElementById('err-' + stepId);
+  if (!el) return;
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+function clearError(stepId) {
+  const el = document.getElementById('err-' + stepId);
+  if (el) el.style.display = 'none';
+}
+
+function goToStep(stepId) {
+  document.querySelectorAll('.auth-step').forEach(s => s.classList.remove('active'));
+  document.getElementById(stepId).classList.add('active');
+}
+
+// Check for an existing remembered session on load
+function checkRememberedSession() {
+  const session = getRememberedSession();
+  if (session) {
+    // Auto-login
+    finalizeLogin(session.email, session.name, true);
+    return;
+  }
+
+  // Check if there's a most-recently-seen user to show
+  const users = getKnownUsers();
+  const entries = Object.values(users).sort((a,b) => b.lastSeen - a.lastSeen);
+  if (entries.length > 0) {
+    const u = entries[0];
+    document.getElementById('auth-remembered-block').style.display = '';
+    document.getElementById('auth-remembered-name').textContent = u.name;
+    document.getElementById('auth-remembered-email').textContent = u.email;
+    document.getElementById('auth-continue-name').textContent = u.name.split(' ')[0];
+    document.getElementById('auth-email-input').value = u.email;
+  }
+}
+
+function continueAsRemembered() {
+  const email = document.getElementById('auth-remembered-email').textContent;
+  const name = document.getElementById('auth-remembered-name').textContent;
+  if (email) {
+    authEmail = email;
+    authName = name;
+    sendOTP();
+  }
+}
+
+function submitEmail() {
+  clearError('step-1');
+  const email = document.getElementById('auth-email-input').value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showError('step-1', 'Please enter a valid email address.');
+    return;
+  }
+  authEmail = email;
+
+  // Check if this is a known user
+  const users = getKnownUsers();
+  const known = users[email.toLowerCase()];
+  if (known) {
+    authName = known.name;
+    isNewUser = false;
+    sendOTP();
+  } else {
+    isNewUser = true;
+    goToStep('auth-step-name');
+    document.getElementById('auth-name-input').focus();
+  }
+}
+
+function submitName() {
+  clearError('step-name');
+  const name = document.getElementById('auth-name-input').value.trim();
+  if (!name || name.length < 2) {
+    showError('step-name', 'Please enter your name (at least 2 characters).');
+    return;
+  }
+  authName = name;
+  sendOTP();
+}
+
+function sendOTP() {
+  const code = generateOTP();
+  // In a real app this would call an email API. We simulate it.
+  console.log(`[BirdieLab] OTP for ${authEmail}: ${code}`);
+
+  document.getElementById('otp-email-display').textContent = authEmail;
+
+  // Build OTP input boxes
+  const row = document.getElementById('otp-boxes');
+  row.innerHTML = '';
+  for (let i = 0; i < 6; i++) {
+    const inp = document.createElement('input');
+    inp.type = 'text';
+    inp.inputMode = 'numeric';
+    inp.maxLength = 1;
+    inp.className = 'otp-box';
+    inp.id = 'otp-' + i;
+    inp.addEventListener('input', (e) => {
+      const val = e.target.value.replace(/\D/g,'');
+      e.target.value = val;
+      if (val && i < 5) document.getElementById('otp-'+(i+1)).focus();
+    });
+    inp.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace' && !e.target.value && i > 0) {
+        document.getElementById('otp-'+(i-1)).focus();
+      }
+    });
+    row.appendChild(inp);
+  }
+
+  goToStep('auth-step-otp');
+  document.getElementById('otp-0').focus();
+
+  // Show the simulated code to the user since we can't actually send email
+  setTimeout(() => {
+    const sub = document.querySelector('#auth-step-otp .auth-sub');
+    if (sub) sub.innerHTML = `We sent a 6-digit code to:<br><small style="color:var(--gold-300);font-size:11px">(Demo: your code is <b style="letter-spacing:2px">${code}</b>)</small>`;
+  }, 100);
+}
+
+function resendCode() {
+  clearError('step-otp');
+  sendOTP();
+}
+
+function submitOTP() {
+  clearError('step-otp');
+  const entered = Array.from({length:6}, (_,i) => {
+    const el = document.getElementById('otp-'+i);
+    return el ? el.value : '';
+  }).join('');
+
+  if (entered.length < 6) {
+    showError('step-otp', 'Please enter all 6 digits.');
+    return;
+  }
+
+  if (entered !== generatedOTP) {
+    showError('step-otp', 'Incorrect code. Please try again.');
+    return;
+  }
+
+  // Valid — finalize
+  saveKnownUser(authEmail, authName);
+  saveSession(authEmail, authName);
+  finalizeLogin(authEmail, authName, false);
+}
+
+function finalizeLogin(email, name, silent) {
+  state.user = { email, name, initials: name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase() };
+  loadUserData(email);
+
+  if (!silent) {
+    document.getElementById('auth-success-msg').textContent =
+      isNewUser
+        ? `Welcome to BirdieLab, ${name.split(' ')[0]}! Your account is ready — start by adding your home course.`
+        : `Welcome back, ${name.split(' ')[0]}! Your rounds and courses are loaded.`;
+    goToStep('auth-step-success');
+  } else {
+    enterApp();
+  }
+}
+
+function enterApp() {
+  document.getElementById('auth-overlay').classList.add('hidden');
+  // Update sidebar
+  document.getElementById('sidebar-user-name').textContent = state.user.name;
+  document.getElementById('sidebar-avatar').textContent = state.user.initials || '⛳';
+  updateDashboardStats();
+  populateRoundCourseSelect();
+  buildHoleSetupGrids();
+  initDashboardCharts();
+}
+
+function signOut() {
+  if (!confirm('Sign out of BirdieLab?')) return;
+  clearSession();
+  location.reload();
 }
 
 // ═══════════════════════════════════════════════
@@ -1981,10 +2454,11 @@ function showPanel(id) {
   if (btn) btn.classList.add('active');
   document.getElementById('page-title').textContent = panelTitles[id] || id;
 
-  if (id === 'round') populateRoundCourseSelect();
+  if (id === 'round') { populateRoundCourseSelect(); updateLastRoundStats(); }
   if (id === 'courses') renderCourses();
   if (id === 'history') renderHistory();
-  if (id === 'stats') initStatCharts();
+  if (id === 'stats') {}
+  if (id === 'dashboard') { updateDashboardStats(); initDashboardCharts(); }
 }
 
 function showTab(id) {
@@ -1992,6 +2466,87 @@ function showTab(id) {
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   event.target.classList.add('active');
+}
+
+// ═══════════════════════════════════════════════
+// LIVE STATS (calculated from real rounds)
+// ═══════════════════════════════════════════════
+function updateDashboardStats() {
+  const rounds = state.rounds;
+  if (!rounds.length) return; // leave as "—"
+
+  const last10 = rounds.slice(0, 10);
+
+  // Scoring avg
+  const avgScore = (last10.reduce((s,r) => s + r.score, 0) / last10.length).toFixed(1);
+  document.getElementById('d-scoring-avg').textContent = avgScore;
+
+  // Aggregate hole stats
+  const allHoles = rounds.flatMap(r => r.holes || []);
+  const firHoles = allHoles.filter(h => h.fairway !== null && h.fairway !== 'na');
+  const firPct = firHoles.length ? Math.round(firHoles.filter(h=>h.fir).length / firHoles.length * 100) + '%' : '—';
+  document.getElementById('d-fir').textContent = firPct;
+
+  const girPct = allHoles.length ? Math.round(allHoles.filter(h=>h.gir).length / allHoles.length * 100) + '%' : '—';
+  document.getElementById('d-gir').textContent = girPct;
+
+  const roundsWithPutts = rounds.filter(r => (r.holes||[]).some(h=>h.putts));
+  const avgPutts = roundsWithPutts.length
+    ? (roundsWithPutts.reduce((s,r)=>s+(r.holes||[]).reduce((a,h)=>a+(h.putts||0),0),0)/roundsWithPutts.length).toFixed(1)
+    : '—';
+  document.getElementById('d-putts').textContent = avgPutts;
+
+  const avgPenalties = rounds.length
+    ? (rounds.reduce((s,r)=>s+(r.holes||[]).reduce((a,h)=>a+(h.penalties||0),0),0)/rounds.length).toFixed(1)
+    : '—';
+  document.getElementById('d-penalties').textContent = avgPenalties;
+
+  // Up/down
+  const udHoles = allHoles.filter(h=>h.updown && h.updown !== 'na');
+  const udPct = udHoles.length ? Math.round(udHoles.filter(h=>h.updown==='yes').length/udHoles.length*100)+'%' : '—';
+  document.getElementById('d-updown').textContent = udPct;
+
+  // Sand saves
+  const bunkerHoles = allHoles.filter(h=>h.bunker && h.bunker !== 'no');
+  const sandPct = bunkerHoles.length ? Math.round(bunkerHoles.filter(h=>h.bunker==='yes').length/bunkerHoles.length*100)+'%' : '—';
+  document.getElementById('d-sand').textContent = sandPct;
+
+  // Scrambling (up/down when missed GIR)
+  const missedGIR = allHoles.filter(h=>h.gir===false && h.updown && h.updown !== 'na');
+  const scramblePct = missedGIR.length ? Math.round(missedGIR.filter(h=>h.updown==='yes').length/missedGIR.length*100)+'%' : '—';
+  document.getElementById('d-scramble').textContent = scramblePct;
+
+  // Handicap estimate
+  if (rounds.length >= 3) {
+    const pars = rounds.slice(0,10).map(r => getTotalPar(r.courseIndex));
+    const diffs = rounds.slice(0,10).map((r,i) => r.score - pars[i]);
+    const sortedDiffs = [...diffs].sort((a,b)=>a-b);
+    const best = sortedDiffs.slice(0, Math.max(1, Math.floor(diffs.length * 0.4)));
+    const hcpEst = (best.reduce((a,b)=>a+b,0)/best.length * 0.96).toFixed(1);
+    document.getElementById('sidebar-hcp').textContent = hcpEst;
+  }
+}
+
+function updateLastRoundStats() {
+  const el = document.getElementById('last-round-stats');
+  if (!state.rounds.length) {
+    el.innerHTML = `<div class="empty-state" style="padding:24px 10px">
+      <div class="empty-icon" style="font-size:28px">📋</div>
+      <div class="empty-title" style="font-size:15px">No rounds yet</div>
+      <p style="font-size:12px">Your last round stats will appear here.</p>
+    </div>`;
+    return;
+  }
+  const r = state.rounds[0];
+  const stats = getRoundStats(r);
+  const relStr = stats.rel === 0 ? 'E' : (stats.rel > 0 ? '+'+stats.rel : ''+stats.rel);
+  el.innerHTML = `
+    <div class="metric-row"><div class="metric-name">Score</div><div class="metric-val" style="margin-left:auto">${r.score} (${relStr})</div></div>
+    <div class="metric-row"><div class="metric-name">GIR</div><div class="metric-val" style="margin-left:auto">${stats.gir}/18</div></div>
+    <div class="metric-row"><div class="metric-name">Fairways Hit</div><div class="metric-val" style="margin-left:auto">${stats.fir}/${stats.firTotal}</div></div>
+    <div class="metric-row"><div class="metric-name">Total Putts</div><div class="metric-val" style="margin-left:auto">${stats.putts}</div></div>
+    <div class="metric-row"><div class="metric-name">Penalties</div><div class="metric-val" style="margin-left:auto">${r.holes ? r.holes.reduce((a,h)=>a+(h.penalties||0),0) : 0}</div></div>
+  `;
 }
 
 // ═══════════════════════════════════════════════
@@ -2075,6 +2630,7 @@ function saveCourse() {
     state.courses.push(course);
   }
 
+  persistData();
   closeCourseModal();
   renderCourses();
   populateRoundCourseSelect();
@@ -2128,6 +2684,7 @@ function renderCourses() {
 function deleteCourse(i) {
   if (confirm('Delete this course? Rounds played here will lose course details.')) {
     state.courses.splice(i, 1);
+    persistData();
     renderCourses();
   }
 }
@@ -2142,6 +2699,8 @@ function populateRoundCourseSelect() {
     sel.innerHTML += `<option value="${i}">${c.name}</option>`;
   });
 }
+
+function loadCourseForRound() {}
 
 function startScoring() {
   const courseIdx = parseInt(document.getElementById('round-course-select').value);
@@ -2215,9 +2774,7 @@ function openHoleModal(holeIdx) {
   document.getElementById('hole-bunker').value = rh.bunker || 'no';
   document.getElementById('hole-updown').value = rh.updown || 'na';
 
-  document.querySelectorAll('.shot-btn').forEach(b=>{
-    b.classList.toggle('selected', b.dataset && rh.shotShape === b.getAttribute('onclick').match(/'(\w+)'/)?.[1]);
-  });
+  document.querySelectorAll('.shot-btn').forEach(b => b.classList.remove('selected'));
 
   updateHoleCalcs();
   document.getElementById('hole-modal').classList.add('open');
@@ -2314,6 +2871,7 @@ function finishRound() {
     if (!confirm(`Only ${played} holes entered. Save incomplete round anyway?`)) return;
   }
   state.rounds.unshift({ ...r });
+  persistData();
   state.currentRound = null;
   document.getElementById('scorecard-section').style.display = 'none';
   showPanel('history');
@@ -2326,12 +2884,12 @@ function renderHistory() {
   const filterYear = document.getElementById('history-filter-year')?.value || 'all';
   const filterCourse = document.getElementById('history-filter-course')?.value || 'all';
 
-  // populate course filter
   const cf = document.getElementById('history-filter-course');
   if (cf) {
+    const prev = cf.value;
     cf.innerHTML = '<option value="all">All Courses</option>';
     state.courses.forEach((c,i)=>{
-      cf.innerHTML += `<option value="${i}">${c.name}</option>`;
+      cf.innerHTML += `<option value="${i}"${prev==i?' selected':''}>${c.name}</option>`;
     });
   }
 
@@ -2342,6 +2900,11 @@ function renderHistory() {
   const el = document.getElementById('history-list');
   if (!rounds.length) {
     el.innerHTML = `<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-title">No rounds found</div><p style="font-size:13px">Start a new round to see history here.</p></div>`;
+    // Hide charts
+    document.getElementById('course-chart-empty').style.display = '';
+    document.getElementById('course-chart-wrap').style.display = 'none';
+    document.getElementById('monthly-chart-empty').style.display = '';
+    document.getElementById('monthly-chart-wrap').style.display = 'none';
     return;
   }
 
@@ -2378,13 +2941,29 @@ function renderHistory() {
   initHistoryCharts(rounds);
 }
 
+function getTotalPar(courseIdx) {
+  if (courseIdx < 0 || courseIdx >= state.courses.length) return 72;
+  return state.courses[courseIdx].holes.reduce((s,h)=>s+h.par,0);
+}
+
+function getRoundStats(round) {
+  const holes = round.holes || [];
+  const gir = holes.filter(h=>h.gir).length;
+  const putts = holes.reduce((s,h)=>s+(h.putts||0),0);
+  const firHoles = holes.filter(h=>h.fir !== null && h.fairway !== 'na');
+  const fir = firHoles.filter(h=>h.fir).length;
+  const par = getTotalPar(round.courseIndex);
+  const rel = round.score - par;
+  return { gir, putts, fir, firTotal: firHoles.length, rel, par };
+}
+
 // ═══════════════════════════════════════════════
 // PRACTICE
 // ═══════════════════════════════════════════════
 const practiceData = {
   driving: {
     title: "Attack the Fairway — Driver Work Day",
-    body: "Your FIR% of 54% is leaving shots on the table. Analysis shows 22% of your misses go left (likely an over-aggressive release), costing you +0.3 shots per missed fairway. Today's session targets ball flight control and alignment.",
+    body: "Today's session targets ball flight control and alignment. Consistent fairway finding is the foundation of lower scores.",
     tags: ["🎯 Alignment sticks", "📐 Face angle drills", "💨 Trajectory work", "🔄 Tempo training"],
     drills: [
       "Gate drill: Place tees 6\" outside each side of the ball — swing without hitting them (15 min)",
@@ -2394,16 +2973,16 @@ const practiceData = {
       "Pressure drill: 10 driver shots alternating between 70% and 100% effort",
       "Finisher: 18 'fairways hit' game — keep score to simulate a real round"
     ],
-    why: "Your GIR% improves dramatically when you hit the fairway (62% vs 34% from the rough). Fixing the driver is worth 1.5–2.0 shots per round based on your current data.",
+    why: "Hitting more fairways is directly correlated to lower scores. GIR % improves dramatically when you start from the short grass.",
     weaknesses: [
-      { name: "Fairway Hit %", val: 54, target: 65, color: "#c9a84c" },
-      { name: "Miss Right Score", val: 4.67, target: 4.2, color: "#e05a5a" },
-      { name: "OB/Penalty Rate", val: 45, target: 20, color: "#e05a5a" },
+      { name: "Fairway Hit %", val: 60, target: 75, color: "#c9a84c" },
+      { name: "Penalty Avoidance", val: 70, target: 90, color: "#e05a5a" },
+      { name: "Consistency", val: 55, target: 80, color: "#e05a5a" },
     ]
   },
   short: {
     title: "The Score Saver — Short Game Blitz",
-    body: "Your up-and-down percentage of 38% is the primary area holding your scoring average above 78. PGA Tour average at your handicap equivalent is ~55%. Bunker saves at 29% are especially low — each extra sand save is worth ~1 shot.",
+    body: "Up-and-down percentage and sand saves are high-leverage areas for scoring improvement. Today's session targets these situations with focused repetition.",
     tags: ["🏖️ Bunker focus", "🎯 Chipping landing zones", "🌿 Rough lies", "📍 Distance control"],
     drills: [
       "Bunker ladder drill: Hit from sand to 5 targets at 10ft, 15ft, 20ft, 25ft intervals",
@@ -2413,30 +2992,30 @@ const practiceData = {
       "Pressure up-and-down: 3-ball sets — must get up & down twice to 'win' each set",
       "Rough lie variety: Hit 5 from light, 5 from medium, 5 from deep rough — note differences"
     ],
-    why: "From our data, when you miss greens short-sided (a common pattern), your up-and-down rate drops to 19%. Today's drills simulate these exact scenarios to build confidence.",
+    why: "Short game saves strokes when approach shots miss the green — which happens on most holes for most golfers.",
     weaknesses: [
-      { name: "Up & Down %", val: 38, target: 55, color: "#e05a5a" },
-      { name: "Sand Save %", val: 29, target: 50, color: "#e05a5a" },
-      { name: "Short Side Recovery", val: 19, target: 35, color: "#e05a5a" },
+      { name: "Up & Down %", val: 40, target: 55, color: "#e05a5a" },
+      { name: "Sand Save %", val: 30, target: 50, color: "#e05a5a" },
+      { name: "Recovery Rate", val: 45, target: 65, color: "#e05a5a" },
     ]
   },
   putting: {
-    title: "Make More 6-Footers — Putting Clinic",
-    body: "Your make rate between 6–10 feet is 42%, which is the biggest statistical opportunity in your game. Improving to 55% in that range would eliminate ~0.8 putts per round — the equivalent of dropping your scoring average by nearly 1 shot.",
+    title: "Make More Putts — Putting Clinic",
+    body: "Putting is the quickest way to immediately lower scores. Today's session focuses on the 6–10ft range and lag putting to eliminate three-putts.",
     tags: ["📏 6-foot gates", "🎯 Speed control", "🔄 Stroke path", "🧠 Pre-putt routine"],
     drills: [
       "Clock drill: Place 8 balls 3ft from hole in a circle — make all 8 without missing",
-      "6-footer pressure: Hit 100 balls from 6ft, track your %. Goal for session: >70%",
+      "6-footer pressure: Hit 50 balls from 6ft, track your %. Goal for session: >65%",
       "Lag circuit: Putt from 20ft, 30ft, 40ft to a string gate — all must stop within 18\"",
       "Gate drill: Two tees slightly wider than putter face — stroke through without touching",
       "Comeback putt: After every missed 6-footer, make the 2–3ft comeback before moving",
       "Breaking putt circuit: 5 right-to-left, 5 left-to-right from 8ft — read then trust"
     ],
-    why: "Your 3-putt rate of 12% contributes +0.36 shots to your average. Combined with 6–10ft improvement, fixing your putting is worth an estimated 1.5 shots per round.",
+    why: "Fewer putts per round is the single fastest path to a lower handicap. Every putt saved is a stroke off your score.",
     weaknesses: [
-      { name: "6–10ft Make %", val: 42, target: 58, color: "#e05a5a" },
-      { name: "3-Putt Rate", val: 12, target: 5, color: "#e05a5a" },
-      { name: "Lag 2-Putt Rate", val: 84, target: 95, color: "#e0a030" },
+      { name: "6–10ft Make %", val: 45, target: 60, color: "#e05a5a" },
+      { name: "3-Putt Avoidance", val: 85, target: 95, color: "#e0a030" },
+      { name: "Lag Control", val: 70, target: 90, color: "#e0a030" },
     ]
   }
 };
@@ -2495,11 +3074,18 @@ function updateDrillProgress(total) {
 }
 
 function savePracticeSession() {
-  alert('Practice session saved! Your stats will be updated next time BirdieLab calculates recommendations.');
+  alert('Practice session saved!');
 }
 
 // ═══════════════════════════════════════════════
-// CHARTS — DASHBOARD
+// DATA PERSISTENCE
+// ═══════════════════════════════════════════════
+function persistData() {
+  if (state.user) saveUserData(state.user.email);
+}
+
+// ═══════════════════════════════════════════════
+// CHARTS — DASHBOARD (only render if data exists)
 // ═══════════════════════════════════════════════
 let chartInstances = {};
 
@@ -2508,111 +3094,144 @@ function destroyChart(id) {
 }
 
 function initDashboardCharts() {
+  const rounds = state.rounds;
+
   // Scoring trend
-  destroyChart('scoringChart');
-  const scores = state.rounds.slice(0,12).map(r=>r.score).reverse();
-  const labels = state.rounds.slice(0,12).map(r=>{
-    const d=new Date(r.date+'T12:00:00');
-    return (d.getMonth()+1)+'/'+(d.getDate());
-  }).reverse();
+  if (rounds.length >= 2) {
+    document.getElementById('scoring-chart-empty').style.display = 'none';
+    document.getElementById('scoring-chart-wrap').style.display = '';
+    destroyChart('scoringChart');
+    const scores = rounds.slice(0,12).map(r=>r.score).reverse();
+    const labels = rounds.slice(0,12).map(r=>{
+      const d=new Date(r.date+'T12:00:00');
+      return (d.getMonth()+1)+'/'+(d.getDate());
+    }).reverse();
 
-  chartInstances['scoringChart'] = new Chart(document.getElementById('scoringChart'), {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [{
-        label: 'Score',
-        data: scores,
-        borderColor: '#2d7a45',
-        backgroundColor: 'rgba(45,122,69,0.1)',
-        fill: true,
-        tension: 0.4,
-        pointBackgroundColor: '#2d7a45',
-        pointRadius: 4,
-        borderWidth: 2,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        y: { beginAtZero: false, grid: { color: '#eee' }, ticks: { color: '#8aab93', font: { size: 11 } } },
-        x: { grid: { display: false }, ticks: { color: '#8aab93', font: { size: 11 } } }
+    chartInstances['scoringChart'] = new Chart(document.getElementById('scoringChart'), {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          label: 'Score',
+          data: scores,
+          borderColor: '#2d7a45',
+          backgroundColor: 'rgba(45,122,69,0.1)',
+          fill: true,
+          tension: 0.4,
+          pointBackgroundColor: '#2d7a45',
+          pointRadius: 4,
+          borderWidth: 2,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: false, grid: { color: '#eee' }, ticks: { color: '#8aab93', font: { size: 11 } } },
+          x: { grid: { display: false }, ticks: { color: '#8aab93', font: { size: 11 } } }
+        }
       }
-    }
-  });
+    });
+  }
 
-  // Strokes Gained
-  destroyChart('sgChart');
-  chartInstances['sgChart'] = new Chart(document.getElementById('sgChart'), {
-    type: 'bar',
-    data: {
-      labels: ['Off the Tee', 'Approach', 'Around Green', 'Putting'],
-      datasets: [{
-        label: 'Strokes Gained vs Handicap',
-        data: [0.3, -0.8, -1.2, -0.4],
-        backgroundColor: (ctx) => ctx.raw >= 0 ? '#2d7a45' : '#e05a5a',
-        borderRadius: 4,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        y: { grid: { color: '#eee' }, ticks: { color: '#8aab93', font: { size: 11 } } },
-        x: { grid: { display: false }, ticks: { color: '#8aab93', font: { size: 11 }, autoSkip: false } }
+  // Strokes Gained — only show if enough rounds
+  if (rounds.length >= 3) {
+    const allHoles = rounds.flatMap(r=>r.holes||[]);
+    const avgPar = rounds.reduce((s,r)=>s+getTotalPar(r.courseIndex),0)/rounds.length;
+    const avgScore = rounds.reduce((s,r)=>s+r.score,0)/rounds.length;
+    const avgGIR = allHoles.filter(h=>h.gir).length / allHoles.length;
+    const girHoles = allHoles.filter(h=>h.gir);
+    const girPutts = girHoles.length ? girHoles.reduce((s,h)=>s+(h.putts||2),0)/girHoles.length : 2;
+
+    document.getElementById('sg-chart-empty').style.display = 'none';
+    document.getElementById('sg-chart-wrap').style.display = '';
+    destroyChart('sgChart');
+
+    // Approximate SG relative to scratch
+    const sgDriving = avgGIR > 0.6 ? 0.3 : -0.4;
+    const sgApproach = avgGIR > 0.55 ? -0.2 : -0.8;
+    const sgShort = -((avgScore - avgPar) * 0.3);
+    const sgPutting = -(girPutts - 1.73) * 5;
+
+    chartInstances['sgChart'] = new Chart(document.getElementById('sgChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Off the Tee', 'Approach', 'Around Green', 'Putting'],
+        datasets: [{
+          data: [sgDriving, sgApproach, sgShort, sgPutting].map(v=>+v.toFixed(2)),
+          backgroundColor: (ctx) => ctx.raw >= 0 ? '#2d7a45' : '#e05a5a',
+          borderRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { grid: { color: '#eee' }, ticks: { color: '#8aab93', font: { size: 11 } } },
+          x: { grid: { display: false }, ticks: { color: '#8aab93', font: { size: 11 }, autoSkip: false } }
+        }
       }
-    }
-  });
+    });
+  }
 
-  // Score distribution donut
-  destroyChart('scoreDistChart');
-  chartInstances['scoreDistChart'] = new Chart(document.getElementById('scoreDistChart'), {
-    type: 'doughnut',
-    data: {
-      labels: ['Eagles', 'Birdies', 'Pars', 'Bogeys', 'Doubles', 'Worse'],
-      datasets: [{
-        data: [1, 12, 46, 30, 9, 2],
-        backgroundColor: ['#c9a84c','#2d7a45','#5a8ee0','#e0a030','#e05a5a','#c050a0'],
-        borderWidth: 2,
-        borderColor: '#fff',
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false, cutout: '60%',
-      plugins: { legend: { display: false } },
-    }
-  });
+  // Score distribution
+  if (rounds.length >= 2) {
+    const allHoles = rounds.flatMap(r=>r.holes||[]);
+    const eagles = allHoles.filter(h=>h.score && h.par && h.score <= h.par-2).length;
+    const birdies = allHoles.filter(h=>h.score && h.par && h.score === h.par-1).length;
+    const pars = allHoles.filter(h=>h.score && h.par && h.score === h.par).length;
+    const bogeys = allHoles.filter(h=>h.score && h.par && h.score === h.par+1).length;
+    const doubles = allHoles.filter(h=>h.score && h.par && h.score === h.par+2).length;
+    const worse = allHoles.filter(h=>h.score && h.par && h.score >= h.par+3).length;
+    const total = allHoles.filter(h=>h.score).length || 1;
 
-  // Putting distance
-  destroyChart('puttingChart');
-  chartInstances['puttingChart'] = new Chart(document.getElementById('puttingChart'), {
-    type: 'bar',
-    data: {
-      labels: ['<3ft','3-6ft','6-10ft','10-15ft','15-25ft','25ft+'],
-      datasets: [{
-        label: 'Make %',
-        data: [94, 71, 42, 28, 16, 4],
-        backgroundColor: ['#2d7a45','#5ab97b','#e0a030','#e0a030','#e05a5a','#e05a5a'],
-        borderRadius: 4,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        y: { max: 100, ticks: { callback: v=>v+'%', color: '#8aab93', font:{size:11} }, grid:{color:'#eee'} },
-        x: { grid: { display: false }, ticks: { color: '#8aab93', font:{size:11}, autoSkip:false } }
+    document.getElementById('dist-chart-empty').style.display = 'none';
+    document.getElementById('dist-chart-wrap').style.display = '';
+    destroyChart('scoreDistChart');
+
+    chartInstances['scoreDistChart'] = new Chart(document.getElementById('scoreDistChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Eagles','Birdies','Pars','Bogeys','Doubles','Worse'],
+        datasets: [{
+          data: [eagles,birdies,pars,bogeys,doubles,worse],
+          backgroundColor: ['#c9a84c','#2d7a45','#5a8ee0','#e0a030','#e05a5a','#c050a0'],
+          borderWidth: 2,
+          borderColor: '#fff',
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false, cutout: '60%',
+        plugins: { legend: { display: false } },
       }
-    }
-  });
+    });
+
+    const names = ['Eagles','Birdies','Pars','Bogeys','Doubles','Worse'];
+    const colors = ['#c9a84c','#2d7a45','#5a8ee0','#e0a030','#e05a5a','#c050a0'];
+    const vals = [eagles,birdies,pars,bogeys,doubles,worse];
+    document.getElementById('dist-legend').innerHTML = names.map((n,i)=>
+      `<span style="display:flex;align-items:center;gap:5px"><span style="width:10px;height:10px;border-radius:2px;background:${colors[i]};display:inline-block"></span>${n} ${Math.round(vals[i]/total*100)}%</span>`
+    ).join('');
+  }
 }
 
 // ═══════════════════════════════════════════════
 // CHARTS — HISTORY
 // ═══════════════════════════════════════════════
 function initHistoryCharts(rounds) {
-  // By course
+  if (rounds.length < 2) {
+    document.getElementById('course-chart-empty').style.display = '';
+    document.getElementById('course-chart-wrap').style.display = 'none';
+    document.getElementById('monthly-chart-empty').style.display = '';
+    document.getElementById('monthly-chart-wrap').style.display = 'none';
+    return;
+  }
+
+  document.getElementById('course-chart-empty').style.display = 'none';
+  document.getElementById('course-chart-wrap').style.display = '';
+  document.getElementById('monthly-chart-empty').style.display = 'none';
+  document.getElementById('monthly-chart-wrap').style.display = '';
+
   destroyChart('courseChart');
   const courseMap = {};
   rounds.forEach(r => {
@@ -2639,7 +3258,6 @@ function initHistoryCharts(rounds) {
     }
   });
 
-  // Monthly
   destroyChart('monthlyChart');
   const monthMap = {};
   rounds.forEach(r => {
@@ -2672,101 +3290,20 @@ function initHistoryCharts(rounds) {
 }
 
 // ═══════════════════════════════════════════════
-// CHARTS — STATS DEEP DIVE
-// ═══════════════════════════════════════════════
-let statChartsInited = false;
-function initStatCharts() {
-  if (statChartsInited) return;
-  statChartsInited = true;
-
-  // FIR Trend
-  destroyChart('firTrendChart');
-  chartInstances['firTrendChart'] = new Chart(document.getElementById('firTrendChart'), {
-    type: 'line',
-    data: {
-      labels: ['Nov','Dec','Jan','Feb','Mar','Apr'],
-      datasets: [
-        { label:'FIR %', data:[44,46,50,51,53,54], borderColor:'#c9a84c', tension:0.4, borderWidth:2, pointRadius:4 },
-        { label:'Goal', data:[65,65,65,65,65,65], borderColor:'#ddd', borderDash:[5,5], borderWidth:1, pointRadius:0 }
-      ]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        y: { min:30, max:80, ticks:{callback:v=>v+'%',color:'#8aab93',font:{size:11}}, grid:{color:'#eee'} },
-        x: { grid:{display:false}, ticks:{color:'#8aab93',font:{size:11}} }
-      }
-    }
-  });
-
-  // Proximity
-  destroyChart('proximityChart');
-  chartInstances['proximityChart'] = new Chart(document.getElementById('proximityChart'), {
-    type: 'bar',
-    data: {
-      labels: ['50-75y','75-100y','100-125y','125-150y','150-175y','175-200y','200y+'],
-      datasets: [{ label:'Avg Distance to Pin (ft)', data:[15,18,20,24,32,41,55], backgroundColor:'#5a8ee0', borderRadius:4 }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        y: { ticks:{callback:v=>v+'ft',color:'#8aab93',font:{size:11}}, grid:{color:'#eee'} },
-        x: { grid:{display:false}, ticks:{color:'#8aab93',font:{size:11},autoSkip:false,maxRotation:30} }
-      }
-    }
-  });
-
-  // Putt distance
-  destroyChart('puttDistChart');
-  chartInstances['puttDistChart'] = new Chart(document.getElementById('puttDistChart'), {
-    type: 'bar',
-    data: {
-      labels: ['<3ft','3-6ft','6-10ft','10-15ft','15-25ft','25ft+'],
-      datasets: [{ label:'Make %', data:[94,71,42,28,16,4], backgroundColor:['#2d7a45','#5ab97b','#e0a030','#e0a030','#e05a5a','#e05a5a'], borderRadius:4 }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend:{display:false} },
-      scales: {
-        y: { max:100, ticks:{callback:v=>v+'%',color:'#8aab93',font:{size:11}}, grid:{color:'#eee'} },
-        x: { grid:{display:false}, ticks:{color:'#8aab93',font:{size:11},autoSkip:false} }
-      }
-    }
-  });
-
-  // Hole average
-  destroyChart('holeAvgChart');
-  const holeAvgs = [0.8, 0.6, 0.4, 1.2, 0.3, 1.1, 0.5, 0.9, 0.5, 0.7, 1.0, 0.8, 0.4, 1.3, 0.6, 0.7, 0.5, 0.9];
-  chartInstances['holeAvgChart'] = new Chart(document.getElementById('holeAvgChart'), {
-    type: 'bar',
-    data: {
-      labels: Array.from({length:18},(_,i)=>`H${i+1}`),
-      datasets: [{ label:'Avg +/-', data:holeAvgs, backgroundColor: holeAvgs.map(v => v <= 0.5 ? '#2d7a45' : v <= 0.9 ? '#e0a030' : '#e05a5a'), borderRadius:3 }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend:{display:false} },
-      scales: {
-        y: { ticks:{callback:v=>'+'+v,color:'#8aab93',font:{size:10}}, grid:{color:'#eee'} },
-        x: { grid:{display:false}, ticks:{color:'#8aab93',font:{size:10},autoSkip:false} }
-      }
-    }
-  });
-}
-
-// ═══════════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
-  // Set today's date
   document.getElementById('round-date').value = new Date().toISOString().slice(0,10);
-
-  seedDemoData();
   buildHoleSetupGrids();
-  populateRoundCourseSelect();
-  initDashboardCharts();
+  checkRememberedSession();
+
+  // Allow pressing Enter in email/name inputs
+  document.getElementById('auth-email-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') submitEmail();
+  });
+  document.getElementById('auth-name-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') submitName();
+  });
 });
 </script>
 </body>
